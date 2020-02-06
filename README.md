@@ -20,6 +20,9 @@ python manage.py migrate
 python manage.py createsuperuser
 
 
+*********************************************************************************
+
+
 **Criação dos modelos e relacionamentos.**
 
 from django.db import models
@@ -84,9 +87,11 @@ class Carro(models.Model):
 
     def __str__(self):  
         return f'{self.montadora} {self.modelo}'  
+       
+*********************************************************************************
         
         
-#Conhecendo o model admin
+**Conhecendo o model admin**
 
 python manage.py shell
 
