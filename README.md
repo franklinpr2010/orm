@@ -37,6 +37,9 @@ class Chassi(models.Model):
 
     def __str__(self):  
         return self.numero  
+        
+        
+        
 
 
 class Montadora(models.Model):  
@@ -81,6 +84,40 @@ class Carro(models.Model):
 
     def __str__(self):  
         return f'{self.montadora} {self.modelo}'  
+        
+        
+#Conhecendo o model admin
+
+python manage.py shell
+
+Executar o comando para importar o model User( Modelo de dados de autenticação do django ):  
+from django.contrib.auth.models import User
+help(User)
+
+UserManager é o gerenciador de usuário (Salva e cria o usuário):  
+from django.contrib.auth.models import User
+help(UserManager)
+help(UserManager.create)
+
+Criar um usuario e salvar no banco:
+
+usuario = User.objects.create_user(username='teste', password='123456', email='franklinpr2010@gmail.com')  
+usuario.save()  
+
+Traz todos os Usuarios do banco:  
+ret = User.objects.all()  
+ret  
+ret[0].username  
+
+
+
+
+
+
+
+
+
+
 
 
 
