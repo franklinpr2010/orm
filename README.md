@@ -90,7 +90,33 @@ class Carro(models.Model):
        
 *********************************************************************************
         
-        
+**Executando querys do python no shell:**  
+python manage.py shell
+
+Importando carros:  
+from core.models import Carro  
+carros = Carro.objects.all()  
+carros #Exibe o resultado, tipo de lista queryset  
+<QuerySet []>  
+
+Dentro do queryset:  
+dir(carros) #vai ter um atributo query  
+
+print(carros.query) #vai trazer a query  
+SELECT "core_carro"."id", "core_carro"."chassi_id", "core_carro"."montadora_id", "core_carro"."modelo", "core_carro"."preco" FROM "core_carro"
+
+Busca os carros por id:  
+carro = Carro.objects.get(pk=1)  
+
+Recuperando o chassi.  
+chassi = carro.chassi  
+
+
+
+
+
+
+
 
 
 
