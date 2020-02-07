@@ -145,7 +145,12 @@ carros = Carros.objects.filter(motoristas = m1)
 print(carros.query)  
 
 #Carros que dois ou mais motoristas dirigem  
-carros = Carros.objects.filter(motoristas__in = moto1) 
+carros = Carros.objects.filter(motoristas__in = moto1).distinct()
+print(carros.query)  
+
+
+
+
 
 
 
