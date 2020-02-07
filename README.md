@@ -111,6 +111,43 @@ carro = Carro.objects.get(pk=1)
 Recuperando o chassi(No relacionamento one to one, se tiver o carro tem o chassi).  
 chassi = carro.chassi  
 
+carro = Carro.objects.get(modelo='Fit')  
+
+honda = Carro.objects.filter(modelo='Fit') 
+SELECT "core_carro"."id", "core_carro"."chassi_id", "core_carro"."montadora_id", "core_carro"."modelo", "core_carro"."preco" FROM "core_carro" WHERE "core_carro"."modelo" = Fit  
+
+honda = fit.montadora  
+
+Buscar dos carros através da montadora:  
+
+from core.models import Montadora  
+honda = Montadora.objects.get(pk=1)  
+Traz os carros vinculados a pk =1  
+carros = honda.carro_set.all()  
+print(carros.query)  
+
+SELECT "core_carro"."id", "core_carro"."chassi_id", "core_carro"."montadora_id", "core_carro"."modelo", "core_carro"."preco" FROM "core_carro" WHERE "core_carro"."montadora_id" = 1  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
