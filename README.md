@@ -108,7 +108,7 @@ SELECT "core_carro"."id", "core_carro"."chassi_id", "core_carro"."montadora_id",
 Busca os carros por id:  
 carro = Carro.objects.get(pk=1)  
 
-Recuperando o chassi.  
+Recuperando o chassi(No relacionamento one to one, se tiver o carro tem o chassi).  
 chassi = carro.chassi  
 
 
