@@ -129,6 +129,25 @@ print(carros.query)
 SELECT "core_carro"."id", "core_carro"."chassi_id", "core_carro"."montadora_id", "core_carro"."modelo", "core_carro"."preco" FROM "core_carro" WHERE "core_carro"."montadora_id" = 1  
 
 
+Obtem o carro1:  
+carro1 = carros.first()  
+#Pega os motoristas do carro1  
+motoristas = carro1.motoristas.all()  
+carro2 = carros.last()  
+motoristas2 = carro2.motoristas.all()  
+print(carro1.query)  
+print(carro2.query)  
+
+#Pega o primeiro motorista  
+m1 = moto1.first()  
+#Quais os carros que esse motorista dirige?  
+carros = Carros.objects.filter(motoristas = m1)  
+print(carros.query)  
+
+#Carros que dois ou mais motoristas dirigem  
+carros = Carros.objects.filter(motoristas__in = moto1) 
+
+
 
 
 
